@@ -3,26 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Надежда Драницына — эксперт по аккредитации лабораторий, ГОСТ ISO/IEC 17025, критериям аккредитации и требованиям Росаккредитации. Платный Telegram-канал для аккредитованных лабораторий.">
-  <title>Надежда Драницына — Аккредитация лабораторий без хаоса</title>
+  <meta name="description" content="Надежда Драницына — профессионал-практик в сфере аккредитации лабораторий, СМК, ГОСТ ISO/IEC 17025, критериев аккредитации, документов Росаккредитации и НПА. Более 15 лет практического опыта. Материалы, разборы и консультации для аккредитованных лабораторий.">
+  <title>Надежда Драницына — помощь аккредитованным лабораториям, СМК, критерии аккредитации и ГОСТ ISO/IEC 17025</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="#top" class="header__logo">Н. Драницына</a>
-      <nav class="header__nav" aria-label="Навигация">
-        <a href="#pains">Боли</a>
-        <a href="#benefits">Канал</a>
-        <a href="#about">Об эксперте</a>
-        <a href="#topics">Темы</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#faq">Вопросы</a>
-        <a href="#contacts">Контакты</a>
+      <nav class="header__nav" aria-label="Навигация" id="headerNav">
+        <a href="#pains" data-nav="pains">Задачи лабораторий</a>
+        <a href="#benefits" data-nav="benefits">Канал</a>
+        <a href="#about" data-nav="about">О канале</a>
+        <a href="#topics" data-nav="topics">Темы</a>
+        <a href="#reviews" data-nav="reviews">Отзывы</a>
+        <a href="#faq" data-nav="faq">Вопросы</a>
+        <a href="#contacts" data-nav="contacts">Контакты</a>
       </nav>
       <a href="#subscribe" class="btn btn--primary btn--sm header__cta">Оформить подписку</a>
       <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav" id="burger">
@@ -31,9 +32,9 @@
     </div>
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
     <nav class="header__mobile" id="mobileNav" aria-label="Мобильное меню" aria-hidden="true">
-      <a href="#pains">Боли</a>
+      <a href="#pains">Задачи лабораторий</a>
       <a href="#benefits">Канал</a>
-      <a href="#about">Об эксперте</a>
+      <a href="#about">О канале</a>
       <a href="#topics">Темы</a>
       <a href="#reviews">Отзывы</a>
       <a href="#faq">Вопросы</a>
@@ -45,70 +46,120 @@
   <main>
 
     <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__mesh"></span>
+        <span class="hero__orb hero__orb--1"></span>
+        <span class="hero__orb hero__orb--2"></span>
+        <span class="hero__orb hero__orb--3"></span>
+        <span class="hero__grid-lines"></span>
+      </div>
       <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="hero__label">Экспертный канал для аккредитованных лабораторий</p>
-          <h1 class="hero__title">Аккредитация лабораторий без хаоса, формализма и бесконечных переделок документов</h1>
-          <p class="hero__subtitle">Практические разборы ГОСТ ISO/IEC 17025, критериев аккредитации, требований Росаккредитации, законодательства, несоответствий и реальных ситуаций лабораторий.</p>
+        <div class="hero__content hero__stagger">
+          <p class="hero__label">Платный Telegram-канал для аккредитованных лабораторий</p>
+          <h1 class="hero__title" data-fade-in>Практическая помощь для <em>аккредитованных</em> лабораторий</h1>
+          <p class="hero__subtitle">Полезные материалы, профессиональные разборы и консультации по ГОСТ ISO/IEC 17025, критериям аккредитации, документам Росаккредитации, НПА в сфере аккредитации, ФЗ-412, СМК, несоответствиям и подготовке к проверкам.</p>
           <div class="hero__author">
-            <p class="hero__name">Надежда Драницына</p>
-            <p class="hero__role">эксперт по аккредитации лабораторий, СМК, ГОСТ ISO/IEC 17025 и требованиям Росаккредитации</p>
+            <div class="hero__author-row">
+              <p class="hero__name">Надежда Драницына</p>
+              <div class="hero__stat" aria-label="Более 15 лет практического опыта">
+                <span class="hero__stat-value"><span data-count="15">0</span>+</span>
+                <span class="hero__stat-label">лет практики</span>
+              </div>
+            </div>
+            <p class="hero__role">профессионал-практик в сфере аккредитации лабораторий, СМК, ГОСТ ISO/IEC 17025, критериев аккредитации и требований Росаккредитации.</p>
           </div>
           <p class="hero__note">Для аккредитованных лабораторий, которым нужно не просто «вести документы», а понимать требования, проходить проверки, закрывать несоответствия и уверенно подтверждать компетентность.</p>
           <div class="hero__actions">
             <a href="#subscribe" class="btn btn--primary btn--lg">Оформить подписку</a>
-            <a href="#contacts" class="btn btn--secondary btn--lg">Связаться со мной</a>
+            <a href="#contacts" class="btn btn--secondary btn--lg">Задать вопрос</a>
+          </div>
+          <p class="hero__trust">Разборы · консультации · чек-листы · подготовка к ПК · помощь с несоответствиями</p>
+          <div class="flow-mini flow-mini--live" id="flowMini" aria-hidden="true">
+            <span class="flow-mini__step is-active" data-step="0">требования</span>
+            <span class="flow-mini__arrow" aria-hidden="true">→</span>
+            <span class="flow-mini__step" data-step="1">доказательства</span>
+            <span class="flow-mini__arrow" aria-hidden="true">→</span>
+            <span class="flow-mini__step" data-step="2">проверка</span>
+            <span class="flow-mini__arrow" aria-hidden="true">→</span>
+            <span class="flow-mini__step" data-step="3">уверенность</span>
           </div>
         </div>
-        <div class="hero__visual">
+        <div class="hero__visual" id="heroVisual">
           <figure class="hero__portrait">
             <img
               src="images/nadezhda.png"
-              alt="Надежда Драницына — эксперт по аккредитации лабораторий, ГОСТ ISO/IEC 17025 и Росаккредитации"
+              alt="Надежда Драницына — профессионал-практик в сфере аккредитации лабораторий"
               width="480"
               height="640"
               loading="eager"
               decoding="async"
             >
           </figure>
-          <div class="hero__card">
-            <span class="hero__card-tag">Росаккредитация</span>
-            <ul>
-              <li>ГОСТ ISO/IEC 17025</li>
-              <li>Критерии аккредитации</li>
-              <li>ПК · ВКС · выездные оценки</li>
-              <li>Несоответствия и СМК</li>
+          <aside class="help-panel" aria-label="С чем помогаю">
+            <h2 class="help-panel__title">С чем помогаю</h2>
+            <ul class="help-panel__grid">
+              <li class="help-panel__item" data-tilt><span class="badge badge--pk">ПК</span> ПК и ВКС</li>
+              <li class="help-panel__item" data-tilt><span class="badge badge--kd">КД</span> Несоответствия</li>
+              <li class="help-panel__item" data-tilt><span class="badge badge--crit">Критерии</span> Критерии аккредитации</li>
+              <li class="help-panel__item" data-tilt><span class="badge badge--ros">Росаккр.</span> Документы Росаккредитации</li>
+              <li class="help-panel__item" data-tilt><span class="badge badge--npa">НПА</span> НПА и ФЗ-412</li>
+              <li class="help-panel__item" data-tilt><span class="badge badge--smk">СМК</span> СМК лаборатории</li>
+              <li class="help-panel__item" data-tilt><span class="badge badge--oa">ОА</span> Область аккредитации</li>
+              <li class="help-panel__item" data-tilt><span class="badge badge--def">—</span> Защита позиции</li>
             </ul>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
 
     <section class="section section--alt reveal" id="pains">
       <div class="container">
-        <h2 class="section__title">Боли аккредитованных лабораторий</h2>
-        <p class="section__lead">Канал создан для лабораторий, которые работают в реальной системе аккредитации: с проверками, ФГИС, экспертами, уведомлениями, несоответствиями, критериями, документами Росаккредитации и постоянными изменениями требований.</p>
-        <div class="grid grid--pains">
-          <article class="card card--pain">получили несоответствия и не понимают, как правильно их закрыть</article>
-          <article class="card card--pain">готовятся к ПК, ВКС или выездной оценке</article>
-          <article class="card card--pain">боятся приостановки аккредитации</article>
-          <article class="card card--pain">не понимают, какие несоответствия ведут к приостановке, а какие устраняются без неё</article>
-          <article class="card card--pain">сталкиваются со спорными трактовками критериев аккредитации</article>
-          <article class="card card--pain">не знают, как правильно ответить на замечания экспертной группы</article>
-          <article class="card card--pain">не понимают, как применять документы и разъяснения Росаккредитации</article>
-          <article class="card card--pain">теряются в изменениях законодательства</article>
-          <article class="card card--pain">не уверены, что область аккредитации оформлена корректно</article>
-          <article class="card card--pain">не понимают, как подтвердить соответствие требованиям при проверке</article>
-          <article class="card card--pain">не знают, какие записи и документы показать эксперту</article>
-          <article class="card card--pain">вынуждены переделывать СМК после каждой проверки</article>
-          <article class="card card--pain">не понимают, как связать ГОСТ 17025, критерии аккредитации и внутренние документы лаборатории</article>
-          <article class="card card--pain">сталкиваются с проблемами во ФГИС, реестрах, области аккредитации и подтверждающих документах</article>
-          <article class="card card--pain">хотят заранее видеть слабые места, а не узнавать о них из акта экспертизы</article>
-          <article class="card card--pain">устали от документов, которые существуют только «для проверки»</article>
-          <article class="card card--pain">хотят понимать требования глубже, а не действовать наугад</article>
+        <h2 class="section__title">Реальные задачи лабораторий в системе Росаккредитации</h2>
+        <p class="section__lead">Аккредитованная лаборатория ежедневно работает не только со стандартом, но и с критериями аккредитации, документами Росаккредитации, НПА, областью аккредитации, записями, оборудованием, персоналом и доказательствами компетентности.</p>
+        <div class="grid grid--tasks">
+          <article class="module-card task-card" data-tilt>
+            <span class="badge badge--tag">перед проверкой</span>
+            <h3 class="module-card__title">Подготовка к ПК, ВКС и выездной оценке</h3>
+            <p class="module-card__text">Понятный план подготовки, слабые места и доказательства, которые нужно показать.</p>
+          </article>
+          <article class="module-card task-card" data-tilt>
+            <span class="badge badge--tag">после акта</span>
+            <h3 class="module-card__title">Несоответствия, корректирующие действия и риск приостановки</h3>
+            <p class="module-card__text">Логика несоответствий, формулировки, доказательства устранения и снижение риска приостановки.</p>
+          </article>
+          <article class="module-card task-card" data-tilt>
+            <span class="badge badge--tag">критерии</span>
+            <h3 class="module-card__title">Критерии аккредитации и документы Росаккредитации</h3>
+            <p class="module-card__text">Как читать и применять требования без паники и домыслов.</p>
+          </article>
+          <article class="module-card task-card" data-tilt>
+            <span class="badge badge--tag">НПА</span>
+            <h3 class="module-card__title">НПА в сфере аккредитации, ФЗ-412 и подзаконные акты</h3>
+            <p class="module-card__text">Связь законодательства с практикой лаборатории и документами СМК.</p>
+          </article>
+          <article class="module-card task-card" data-tilt>
+            <span class="badge badge--tag">СМК</span>
+            <h3 class="module-card__title">СМК, внутренние аудиты, риски и записи</h3>
+            <p class="module-card__text">Система, которая работает на аккредитацию, а не только «для проверки».</p>
+          </article>
+          <article class="module-card task-card" data-tilt>
+            <span class="badge badge--tag">ОА</span>
+            <h3 class="module-card__title">Область аккредитации, ФГИС и реестровые вопросы</h3>
+            <p class="module-card__text">Оформление области, реестры и подтверждающие документы.</p>
+          </article>
+          <article class="module-card task-card" data-tilt>
+            <span class="badge badge--tag">ФГИС</span>
+            <h3 class="module-card__title">Доказательства соответствия и защита позиции лаборатории</h3>
+            <p class="module-card__text">Что показать, как аргументировать и как не потерять позицию при проверке.</p>
+          </article>
+          <article class="module-card task-card" data-tilt>
+            <span class="badge badge--tag">персонал</span>
+            <h3 class="module-card__title">Подготовка персонала к вопросам экспертной группы</h3>
+            <p class="module-card__text">Уверенные ответы, записи и понимание требований на практике.</p>
+          </article>
         </div>
         <div class="cta-inline">
-          <p>Если вы узнали свою ситуацию — канал поможет разобраться системно, а не тушить пожар перед проверкой.</p>
+          <p>Канал помогает лаборатории заранее разложить требования по действиям, документам и доказательствам, чтобы подготовка к проверке была управляемой, а не авральной.</p>
           <a href="#subscribe" class="btn btn--primary">Оформить подписку</a>
         </div>
       </div>
@@ -117,25 +168,50 @@
     <section class="section" id="benefits">
       <div class="container">
         <h2 class="section__title">Что получает подписчик канала</h2>
-        <ul class="benefits-list">
-          <li>разборы ГОСТ ISO/IEC 17025 по пунктам</li>
-          <li>разборы критериев аккредитации для лабораторий</li>
-          <li>пояснения по документам и требованиям Росаккредитации</li>
-          <li>разборы законодательства в сфере аккредитации</li>
-          <li>практические комментарии по ФЗ-412 и подзаконным актам</li>
-          <li>алгоритмы действий после получения несоответствий</li>
-          <li>пояснения по приостановке, устранению несоответствий и подтверждению устранения</li>
-          <li>разборы уведомлений, актов, заключений и типовых ситуаций после ПК</li>
-          <li>материалы по подготовке к ПК, ВКС и выездным оценкам</li>
-          <li>разборы спорных требований и экспертных трактовок</li>
-          <li>помощь в понимании, как формировать доказательную базу</li>
-          <li>материалы по СМК, внутренним аудитам, АСР, рискам, записям, НС, НР и КД</li>
-          <li>пояснения по оборудованию, персоналу, методикам, поставщикам и метрологической прослеживаемости</li>
-          <li>разборы вопросов по области аккредитации</li>
-          <li>шпаргалки, чек-листы, примеры формулировок</li>
-          <li>практические рекомендации для руководителей лабораторий и менеджеров по качеству</li>
-          <li>профессиональные комментарии без воды, паники и пересказа стандарта</li>
-        </ul>
+        <div class="grid grid--modules">
+          <article class="module-card benefit-module">
+            <h3 class="module-card__title">Требования</h3>
+            <ul class="module-card__list">
+              <li>ГОСТ ISO/IEC 17025</li>
+              <li>критерии аккредитации</li>
+              <li>документы Росаккредитации</li>
+              <li>НПА в сфере аккредитации</li>
+              <li>ФЗ-412 и подзаконные акты</li>
+            </ul>
+          </article>
+          <article class="module-card benefit-module">
+            <h3 class="module-card__title">Проверки</h3>
+            <ul class="module-card__list">
+              <li>подтверждение компетентности</li>
+              <li>ПК</li>
+              <li>ВКС</li>
+              <li>выездные оценки</li>
+              <li>акты, уведомления, замечания</li>
+              <li>приостановка и устранение несоответствий</li>
+            </ul>
+          </article>
+          <article class="module-card benefit-module">
+            <h3 class="module-card__title">Система менеджмента</h3>
+            <ul class="module-card__list">
+              <li>внутренние аудиты</li>
+              <li>риски и возможности</li>
+              <li>управление документами</li>
+              <li>управление записями</li>
+              <li>НС, НР и корректирующие действия</li>
+              <li>анализ со стороны руководства</li>
+            </ul>
+          </article>
+          <article class="module-card benefit-module">
+            <h3 class="module-card__title">Практические материалы</h3>
+            <ul class="module-card__list">
+              <li>шпаргалки</li>
+              <li>чек-листы</li>
+              <li>примеры формулировок</li>
+              <li>алгоритмы действий</li>
+              <li>разборы реальных ситуаций лабораторий</li>
+            </ul>
+          </article>
+        </div>
         <p class="section__conclusion">Канал помогает лаборатории не просто читать требования, а понимать, как выполнить их в системе Росаккредитации и подтвердить это документально.</p>
         <div class="section__cta">
           <a href="#subscribe" class="btn btn--primary">Оформить подписку</a>
@@ -146,21 +222,22 @@
     <section class="section section--dark" id="system">
       <div class="container">
         <h2 class="section__title section__title--light">Это не канал только про 17025</h2>
-        <p class="section__lead section__lead--light">Аккредитованная лаборатория живёт не только внутри стандарта. На практике ей нужно одновременно учитывать ГОСТ ISO/IEC 17025, критерии аккредитации, документы Росаккредитации, законодательство, требования ФГИС, область аккредитации, замечания экспертов и реальные риски при проверках.</p>
-        <p class="subsection-label subsection-label--light">В канале разбирается:</p>
-        <ul class="check-list check-list--light">
-          <li>как связаны требования стандарта и критерии аккредитации</li>
-          <li>где заканчивается требование стандарта и начинается требование законодательства</li>
-          <li>как читать документы Росаккредитации без паники и домыслов</li>
-          <li>как отличать обязательное требование от спорной трактовки</li>
-          <li>как лаборатории формировать доказательства соответствия</li>
-          <li>как действовать после получения несоответствий</li>
-          <li>как готовиться к проверкам без авральной переделки всей СМК</li>
-          <li>как защищать позицию лаборатории профессионально и аргументированно</li>
-          <li>как не превратить СМК в формальный архив документов</li>
-        </ul>
+        <p class="section__lead section__lead--light">Аккредитованная лаборатория работает не только внутри стандарта. На практике ей нужно одновременно учитывать ГОСТ ISO/IEC 17025, критерии аккредитации, документы Росаккредитации, НПА в сфере аккредитации, ФЗ-412, область аккредитации, требования ФГИС, замечания экспертной группы и реальные риски при проверках.</p>
+        <div class="flow-diagram flow-diagram--live" id="flowDiagram" aria-label="Схема системы требований">
+          <div class="flow-diagram__step" data-flow-step><span class="badge badge--light">17025</span> ГОСТ ISO/IEC 17025</div>
+          <span class="flow-diagram__arrow" aria-hidden="true">→</span>
+          <div class="flow-diagram__step" data-flow-step><span class="badge badge--light">Критерии</span> Критерии аккредитации</div>
+          <span class="flow-diagram__arrow" aria-hidden="true">→</span>
+          <div class="flow-diagram__step" data-flow-step><span class="badge badge--light">Росаккр.</span> Документы Росаккредитации</div>
+          <span class="flow-diagram__arrow" aria-hidden="true">→</span>
+          <div class="flow-diagram__step" data-flow-step><span class="badge badge--light">НПА</span> НПА и ФЗ-412</div>
+          <span class="flow-diagram__arrow" aria-hidden="true">→</span>
+          <div class="flow-diagram__step" data-flow-step><span class="badge badge--light">—</span> Доказательства соответствия</div>
+          <span class="flow-diagram__arrow" aria-hidden="true">→</span>
+          <div class="flow-diagram__step" data-flow-step><span class="badge badge--light">ПК</span> Проверка</div>
+        </div>
         <blockquote class="accent-quote accent-quote--light">
-          Я разбираю аккредитацию как систему, а не как набор разрозненных пунктов стандарта.
+          Я разбираю аккредитацию как систему требований, доказательств и практических действий лаборатории.
         </blockquote>
       </div>
     </section>
@@ -178,23 +255,28 @@
               decoding="async"
             >
           </figure>
+          <aside class="author-card">
+            <p class="author-card__name">Надежда Драницына</p>
+            <p class="author-card__role">Профессионал-практик в сфере аккредитации лабораторий</p>
+            <ul class="author-card__list">
+              <li>более 15 лет практического опыта</li>
+              <li>СМК лабораторий и ГОСТ ISO/IEC 17025</li>
+              <li>критерии аккредитации</li>
+              <li>документы Росаккредитации</li>
+              <li>НПА в сфере аккредитации</li>
+              <li>ФЗ-412 и подзаконные акты</li>
+              <li>подготовка к ПК, ВКС и выездным оценкам</li>
+              <li>несоответствия и корректирующие действия</li>
+              <li>аудит СМК</li>
+              <li>реальные кейсы лабораторий</li>
+            </ul>
+          </aside>
         </div>
         <div class="about__content">
           <h2 class="section__title">Канал ведёт Надежда Драницына</h2>
-          <p>Я работаю с вопросами, с которыми аккредитованные лаборатории сталкиваются каждый день: ГОСТ ISO/IEC 17025, критерии аккредитации, документы Росаккредитации, законодательство, ПК, ВКС, несоответствия, приостановки, область аккредитации, СМК, внутренние аудиты, риски, записи и реальные вопросы экспертных групп.</p>
+          <p>Я более 15 лет работаю в сфере аккредитации лабораторий, СМК и ГОСТ ISO/IEC 17025. На практике разбираю вопросы, с которыми аккредитованные лаборатории сталкиваются каждый день: критерии аккредитации, документы Росаккредитации, НПА в сфере аккредитации, ФЗ-412, ПК, ВКС, несоответствия, приостановки, область аккредитации, внутренние аудиты, риски, записи и реальные вопросы экспертных групп.</p>
           <p>Моя задача — не пересказать стандарт, а помочь лаборатории понять, какие требования к ней предъявляются, как они связаны между собой, чем подтверждается соответствие и как действовать при проверках.</p>
-          <ul class="tags-list">
-            <li>эксперт по аккредитации лабораторий</li>
-            <li>эксперт по ГОСТ ISO/IEC 17025 и СМК</li>
-            <li>разбираю критерии аккредитации и документы Росаккредитации</li>
-            <li>разбираю законодательство в сфере аккредитации</li>
-            <li>помогаю лабораториям устранять несоответствия</li>
-            <li>помогаю готовиться к ПК, ВКС и выездным оценкам</li>
-            <li>провожу аудит СМК</li>
-            <li>разбираю реальные кейсы лабораторий</li>
-            <li>объясняю сложные требования нормальным языком</li>
-            <li>помогаю лабораториям видеть риски до проверки</li>
-          </ul>
+          <p class="about__note">Моя задача — не заменить работу лаборатории, а дать ей понятную систему действий.</p>
         </div>
       </div>
     </section>
@@ -202,80 +284,110 @@
     <section class="section section--alt" id="topics">
       <div class="container">
         <h2 class="section__title">О чём канал</h2>
-        <div class="grid grid--topics">
-          <span class="topic">ГОСТ ISO/IEC 17025-2019</span>
-          <span class="topic">критерии аккредитации</span>
-          <span class="topic">документы Росаккредитации</span>
-          <span class="topic">законодательство в сфере аккредитации</span>
-          <span class="topic">ФЗ-412 и подзаконные акты</span>
-          <span class="topic">подтверждение компетентности</span>
-          <span class="topic">ПК, ВКС и выездные оценки</span>
-          <span class="topic">несоответствия с приостановкой и без</span>
-          <span class="topic">устранение несоответствий</span>
-          <span class="topic">корректирующие действия</span>
-          <span class="topic">акты, уведомления и заключения</span>
-          <span class="topic">область аккредитации</span>
-          <span class="topic">ФГИС и реестровые вопросы</span>
-          <span class="topic">СМК лаборатории</span>
-          <span class="topic">внутренние аудиты</span>
-          <span class="topic">анализ со стороны руководства</span>
-          <span class="topic">риски и возможности</span>
-          <span class="topic">документы и записи</span>
-          <span class="topic">персонал</span>
-          <span class="topic">оборудование</span>
-          <span class="topic">метрологическая прослеживаемость</span>
-          <span class="topic">методики испытаний</span>
-          <span class="topic">верификация и валидация методик</span>
-          <span class="topic">отбор образцов</span>
-          <span class="topic">поставщики и внешние услуги</span>
-          <span class="topic">протоколы, заявки, договоры</span>
-          <span class="topic">типовые замечания экспертов</span>
-          <span class="topic">защита позиции лаборатории</span>
+        <div class="topics-accordion">
+          <details class="topic-group">
+            <summary>Аккредитация и требования</summary>
+            <ul>
+              <li>ГОСТ ISO/IEC 17025</li>
+              <li>критерии аккредитации</li>
+              <li>документы Росаккредитации</li>
+              <li>НПА в сфере аккредитации</li>
+              <li>ФЗ-412</li>
+              <li>подзаконные акты</li>
+              <li>подтверждение компетентности</li>
+              <li>область аккредитации</li>
+            </ul>
+          </details>
+          <details class="topic-group">
+            <summary>Проверки и несоответствия</summary>
+            <ul>
+              <li>ПК</li>
+              <li>ВКС</li>
+              <li>выездные оценки</li>
+              <li>акты и уведомления</li>
+              <li>несоответствия</li>
+              <li>корректирующие действия</li>
+              <li>риск приостановки</li>
+            </ul>
+          </details>
+          <details class="topic-group">
+            <summary>Система менеджмента</summary>
+            <ul>
+              <li>внутренние аудиты</li>
+              <li>анализ со стороны руководства</li>
+              <li>риски и возможности</li>
+              <li>управление документами</li>
+              <li>управление записями</li>
+              <li>НС и НР</li>
+            </ul>
+          </details>
+          <details class="topic-group">
+            <summary>Технические процессы лаборатории</summary>
+            <ul>
+              <li>персонал</li>
+              <li>оборудование</li>
+              <li>метрологическая прослеживаемость</li>
+              <li>методики испытаний</li>
+              <li>верификация и валидация</li>
+              <li>отбор образцов</li>
+              <li>поставщики</li>
+            </ul>
+          </details>
+          <details class="topic-group">
+            <summary>НПА и документы Росаккредитации</summary>
+            <ul>
+              <li>Федеральный закон № 412-ФЗ</li>
+              <li>критерии аккредитации</li>
+              <li>документы Росаккредитации</li>
+              <li>разъяснения и практическое применение требований</li>
+              <li>изменения законодательства</li>
+              <li>связь НПА с документами СМК лаборатории</li>
+            </ul>
+          </details>
+          <details class="topic-group">
+            <summary>Практические материалы</summary>
+            <ul>
+              <li>шпаргалки</li>
+              <li>чек-листы</li>
+              <li>примеры формулировок</li>
+              <li>разборы кейсов</li>
+              <li>защита позиции лаборатории</li>
+            </ul>
+          </details>
         </div>
-        <p class="section__cta-text"><a href="#topics" class="link">Смотреть темы канала</a> · <a href="#subscribe" class="link">Посмотреть, что внутри канала</a></p>
+        <p class="section__cta-text"><a href="#subscribe" class="link">Оформить подписку на канал</a></p>
       </div>
     </section>
 
     <section class="section" id="changes">
       <div class="container">
         <h2 class="section__title">Что меняется после подписки</h2>
-        <div class="grid grid--changes">
-          <article class="card card--change"><p>появляется понимание всей системы требований, а не только отдельных пунктов 17025</p></article>
-          <article class="card card--change"><p>становится проще готовиться к ПК, ВКС и выездной оценке</p></article>
-          <article class="card card--change"><p>легче разбирать замечания, уведомления и несоответствия</p></article>
-          <article class="card card--change"><p>появляется аргументация для спорных ситуаций</p></article>
-          <article class="card card--change"><p>становится понятнее, как применять критерии аккредитации</p></article>
-          <article class="card card--change"><p>проще ориентироваться в документах Росаккредитации</p></article>
-          <article class="card card--change"><p>снижается риск формальных ошибок при проверках</p></article>
-          <article class="card card--change"><p>лаборатория заранее видит слабые места</p></article>
-          <article class="card card--change"><p>СМК становится связанной с реальными требованиями аккредитации</p></article>
-          <article class="card card--change"><p>руководитель и менеджер по качеству увереннее понимают, что показывать экспертам</p></article>
-          <article class="card card--change"><p>уменьшается количество бессмысленных переделок документов</p></article>
-          <article class="card card--change"><p>появляется системный подход к проверкам, аудитам и записям</p></article>
+        <div class="before-after">
+          <div class="before-after__col before-after__col--before">
+            <h3 class="before-after__heading">До подписки</h3>
+            <ul>
+              <li>требования выглядят разрозненными</li>
+              <li>подготовка к ПК идёт в авральном режиме</li>
+              <li>непонятно, какие доказательства показать</li>
+              <li>несоответствия вызывают панику</li>
+              <li>СМК воспринимается как набор документов</li>
+            </ul>
+          </div>
+          <div class="before-after__col before-after__col--after">
+            <h3 class="before-after__heading">После подписки</h3>
+            <ul>
+              <li>появляется система</li>
+              <li>понятна логика требований</li>
+              <li>видно, какие документы и записи нужны</li>
+              <li>проще готовить ответы и корректирующие действия</li>
+              <li>лаборатория заранее видит слабые места</li>
+              <li>понятнее связь между 17025, критериями, НПА и документами Росаккредитации</li>
+            </ul>
+          </div>
         </div>
         <blockquote class="accent-quote">
           Главный результат — лаборатория начинает видеть аккредитацию как систему требований, доказательств и управляемых процессов.
         </blockquote>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="audience">
-      <div class="container">
-        <h2 class="section__title">Кому нужен платный канал</h2>
-        <ul class="audience-list">
-          <li>менеджерам по качеству лабораторий</li>
-          <li>руководителям испытательных лабораторий</li>
-          <li>специалистам по СМК</li>
-          <li>сотрудникам, участвующим в подготовке к ПК</li>
-          <li>лабораториям, которые получили несоответствия</li>
-          <li>лабораториям, которые готовятся к ВКС или выездной оценке</li>
-          <li>специалистам, которые отвечают за документы, аудиты, риски и корректирующие действия</li>
-          <li>тем, кто хочет понимать требования Росаккредитации глубже</li>
-          <li>тем, кто устал от формального подхода к СМК</li>
-          <li>тем, кто хочет заранее видеть риски при проверке</li>
-          <li>тем, кому нужна профессиональная опора, а не общие советы</li>
-          <li>тем, кто хочет понимать связь между стандартом, критериями аккредитации и законодательством</li>
-        </ul>
       </div>
     </section>
 
@@ -284,10 +396,30 @@
         <h2 class="section__title">Что говорят лаборатории после работы со мной</h2>
         <p class="section__subtitle">Это отзывы не про «полезный контент», а про реальные ситуации: ПК, ВКС, несоответствия, подготовку документов, разбор требований и уверенность лаборатории при проверке.</p>
 
-        <article class="review-featured">
+        <article class="review-featured review-featured--glow" data-tilt>
+          <span class="badge badge--featured">ПК без приостановки</span>
           <p class="review-featured__text">Мы прошли ПК без приостановки.<br>И честно — после проверки было только одно сожаление: что не нашли ваш канал раньше.</p>
           <footer class="review-featured__meta">Руководитель испытательной лаборатории</footer>
         </article>
+
+        <div class="reviews-screenshots">
+          <h3 class="reviews-screenshots__title">Отзывы из Telegram</h3>
+          <p class="reviews-screenshots__hint">Место для скриншотов: персональные данные замазаны, названия лабораторий не раскрываются.</p>
+          <div class="grid grid--screenshots">
+            <figure class="screenshot-card">
+              <div class="screenshot-card__placeholder" role="img" aria-label="Скриншот отзыва — добавьте изображение"></div>
+              <figcaption>отзыв подписчика</figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <div class="screenshot-card__placeholder" role="img" aria-label="Скриншот отзыва — добавьте изображение"></div>
+              <figcaption>отзыв подписчика</figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <div class="screenshot-card__placeholder" role="img" aria-label="Скриншот отзыва — добавьте изображение"></div>
+              <figcaption>отзыв подписчика</figcaption>
+            </figure>
+          </div>
+        </div>
 
         <div class="reviews-carousel" id="reviewsCarousel">
           <div class="reviews-track">
@@ -333,6 +465,7 @@
             </article>
           </div>
           <div class="carousel-controls">
+            <div class="carousel-dots" id="reviewDots" role="tablist" aria-label="Отзывы"></div>
             <button type="button" class="carousel-btn" id="prevReview" aria-label="Предыдущий отзыв">←</button>
             <button type="button" class="carousel-btn" id="nextReview" aria-label="Следующий отзыв">→</button>
           </div>
@@ -342,16 +475,40 @@
           <h3 class="cases__title">Мини-кейсы</h3>
           <div class="grid grid--cases">
             <article class="card card--case">
-              <p><strong>Было:</strong> лаборатория готовилась к ПК в режиме хаоса, не понимала, какие документы показать и как закрывать замечания.</p>
-              <p><strong>Стало:</strong> после материалов канала выстроили подготовку, разобрали слабые места, прошли ПК без приостановки.</p>
+              <div class="case-cols">
+                <div class="case-cols__col">
+                  <p class="case-cols__label">Было</p>
+                  <p>Лаборатория готовилась к ПК в режиме хаоса, не понимала, какие документы показать и как закрывать замечания.</p>
+                </div>
+                <div class="case-cols__col case-cols__col--after">
+                  <p class="case-cols__label">Стало</p>
+                  <p>После материалов канала выстроили подготовку, разобрали слабые места, прошли ПК без приостановки.</p>
+                </div>
+              </div>
             </article>
             <article class="card card--case">
-              <p><strong>Было:</strong> получили несоответствия и не понимали, как формулировать причины и корректирующие действия.</p>
-              <p><strong>Стало:</strong> разобрали логику несоответствия, подготовили понятный план действий и доказательства устранения.</p>
+              <div class="case-cols">
+                <div class="case-cols__col">
+                  <p class="case-cols__label">Было</p>
+                  <p>Получили несоответствия и не понимали, как формулировать причины и корректирующие действия.</p>
+                </div>
+                <div class="case-cols__col case-cols__col--after">
+                  <p class="case-cols__label">Стало</p>
+                  <p>Разобрали логику несоответствия, подготовили понятный план действий и доказательства устранения.</p>
+                </div>
+              </div>
             </article>
             <article class="card card--case">
-              <p><strong>Было:</strong> лаборатория не понимала, как связать требования стандарта, критерии аккредитации и внутренние документы СМК.</p>
-              <p><strong>Стало:</strong> появилась понятная логика доказательств и понимание, какие документы и записи действительно нужны.</p>
+              <div class="case-cols">
+                <div class="case-cols__col">
+                  <p class="case-cols__label">Было</p>
+                  <p>Лаборатория не понимала, как связать требования стандарта, критерии аккредитации и внутренние документы СМК.</p>
+                </div>
+                <div class="case-cols__col case-cols__col--after">
+                  <p class="case-cols__label">Стало</p>
+                  <p>Появилась понятная логика доказательств и понимание, какие документы и записи действительно нужны.</p>
+                </div>
+              </div>
             </article>
           </div>
         </div>
@@ -366,32 +523,64 @@
     <section class="section section--alt" id="direct">
       <div class="container">
         <h2 class="section__title">Когда лучше связаться со мной напрямую</h2>
-        <p class="section__lead">Платный канал закрывает большинство типовых и системных вопросов по аккредитации лабораторий, ГОСТ ISO/IEC 17025, критериям аккредитации, СМК и требованиям Росаккредитации. Но есть ситуации, когда лаборатории нужна индивидуальная помощь.</p>
-        <div class="grid grid--direct">
-          <article class="card">получили несоответствия и нужно понять, как их закрывать</article>
-          <article class="card">предстоит ПК, ВКС или выездная оценка в ближайшее время</article>
-          <article class="card">нужно проверить документы СМК перед проверкой</article>
-          <article class="card">есть спорная трактовка требования</article>
-          <article class="card">требуется аудит СМК</article>
-          <article class="card">нужна помощь с ответом на замечания</article>
-          <article class="card">лаборатория не понимает, с чего начать подготовку</article>
-          <article class="card">есть риск приостановки аккредитации</article>
-          <article class="card">нужно разобрать конкретную ситуацию по документам или записям</article>
-          <article class="card">нужно оценить слабые места перед проверкой</article>
-          <article class="card">нужно понять, как применить критерии аккредитации к конкретной ситуации</article>
+        <div class="split-columns">
+          <article class="module-card split-columns__card">
+            <h3 class="module-card__title">Подписка на канал</h3>
+            <ul class="module-card__list">
+              <li>системные разборы</li>
+              <li>регулярные материалы</li>
+              <li>чек-листы и шпаргалки</li>
+              <li>подготовка к проверкам</li>
+              <li>понимание требований</li>
+              <li>работа с типовыми ситуациями лабораторий</li>
+            </ul>
+            <a href="#subscribe" class="btn btn--primary">Оформить подписку</a>
+          </article>
+          <article class="module-card split-columns__card">
+            <h3 class="module-card__title">Личная консультация</h3>
+            <ul class="module-card__list">
+              <li>срочные несоответствия</li>
+              <li>риск приостановки</li>
+              <li>аудит СМК</li>
+              <li>подготовка ответа на замечания</li>
+              <li>разбор конкретных документов</li>
+              <li>индивидуальная ситуация лаборатории</li>
+            </ul>
+            <a href="#contacts" class="btn btn--secondary">Задать вопрос</a>
+          </article>
         </div>
-        <div class="section__cta">
-          <a href="#contacts" class="btn btn--secondary">Связаться со мной</a>
-        </div>
+        <p class="split-columns__note">Подписка — для системной профессиональной поддержки. Личная консультация — для срочных и индивидуальных ситуаций.</p>
       </div>
     </section>
 
     <section class="section" id="subscribe">
       <div class="container">
         <h2 class="section__title">Формат участия</h2>
-        <p class="section__lead">Подписка открывает доступ к закрытому экспертному Telegram-каналу с регулярными разборами, практическими материалами и профессиональными пояснениями по аккредитации лабораторий.</p>
+        <p class="section__lead">Подписка открывает доступ к закрытому профессиональному Telegram-каналу с регулярными разборами, практическими материалами и пояснениями по аккредитации лабораторий.</p>
 
         <div class="pricing-card">
+          <div class="pricing-card__includes">
+            <h3 class="pricing-card__subtitle">В подписку входит:</h3>
+            <ul class="check-list">
+              <li>доступ к закрытому Telegram-каналу</li>
+              <li>регулярные профессиональные разборы</li>
+              <li>шпаргалки и чек-листы</li>
+              <li>примеры формулировок</li>
+              <li>разборы требований и практических ситуаций</li>
+              <li>материалы для подготовки к ПК и ВКС</li>
+              <li>пояснения по критериям аккредитации и документам Росаккредитации</li>
+              <li>пояснения по НПА в сфере аккредитации и ФЗ-412</li>
+            </ul>
+            <h3 class="pricing-card__subtitle">Подходит, если вы:</h3>
+            <ul class="check-list">
+              <li>готовитесь к проверке</li>
+              <li>ведёте СМК</li>
+              <li>закрываете несоответствия</li>
+              <li>хотите понимать требования Росаккредитации</li>
+              <li>хотите видеть слабые места до проверки</li>
+              <li>хотите понимать связь между стандартом, критериями, НПА и внутренними документами лаборатории</li>
+            </ul>
+          </div>
           <div class="pricing-card__details">
             <dl class="pricing-list">
               <div>
@@ -411,11 +600,7 @@
                 <dd>Указать условия продления</dd>
               </div>
               <div>
-                <dt>После оплаты</dt>
-                <dd>Доступ к закрытому каналу, материалы и разборы</dd>
-              </div>
-              <div>
-                <dt>Подключение</dt>
+                <dt>Порядок подключения</dt>
                 <dd>Ссылка на канал приходит после оплаты</dd>
               </div>
               <div>
@@ -428,10 +613,6 @@
             <a href="https://t.me/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">Оформить подписку</a>
             <a href="#contacts" class="btn btn--secondary">Задать вопрос перед подпиской</a>
             <p class="pricing-card__hint">Если сомневаетесь, подойдёт ли канал вашей лаборатории, можно написать мне и уточнить.</p>
-            <p class="pricing-card__links">
-              <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Ссылка на оплату</a> ·
-              <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Платный Telegram-канал</a>
-            </p>
           </div>
         </div>
       </div>
@@ -443,11 +624,15 @@
         <div class="faq">
           <details class="faq__item">
             <summary>Это консультация или канал?</summary>
-            <div class="faq__body"><p>Это платный экспертный Telegram-канал с регулярными разборами, материалами и пояснениями. Индивидуальные консультации могут обсуждаться отдельно.</p></div>
+            <div class="faq__body"><p>Это платный профессиональный Telegram-канал с регулярными разборами, материалами и пояснениями. Индивидуальные консультации обсуждаются отдельно.</p></div>
           </details>
           <details class="faq__item">
             <summary>Канал только про ГОСТ ISO/IEC 17025?</summary>
-            <div class="faq__body"><p>Нет. Канал шире. В нём разбираются ГОСТ ISO/IEC 17025, критерии аккредитации, документы Росаккредитации, законодательство в сфере аккредитации, ПК, ВКС, несоответствия, область аккредитации, СМК и реальные ситуации лабораторий.</p></div>
+            <div class="faq__body"><p>Нет. Канал шире. В нём разбираются ГОСТ ISO/IEC 17025, критерии аккредитации, документы Росаккредитации, НПА в сфере аккредитации, ФЗ-412, подзаконные акты, ПК, ВКС, несоответствия, область аккредитации, СМК и реальные ситуации лабораторий.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Разбираются ли в канале критерии аккредитации и документы Росаккредитации?</summary>
+            <div class="faq__body"><p>Да. Отдельное внимание уделяется критериям аккредитации, документам Росаккредитации, НПА в сфере аккредитации и тому, как эти требования применяются лабораторией на практике.</p></div>
           </details>
           <details class="faq__item">
             <summary>Подойдёт ли канал, если у нас скоро ПК?</summary>
@@ -455,7 +640,11 @@
           </details>
           <details class="faq__item">
             <summary>Поможет ли канал закрыть несоответствия?</summary>
-            <div class="faq__body"><p>Канал помогает понять логику несоответствий, подходы к анализу причин, корректирующим действиям и оформлению доказательств. Конкретные ситуации можно разбирать дополнительно в рамках консультаций, если такой формат предусмотрен.</p></div>
+            <div class="faq__body"><p>Канал помогает понять логику несоответствий, подходы к анализу причин, корректирующим действиям и оформлению доказательств. Конкретные ситуации можно разбирать в рамках личной консультации.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Подойдёт ли канал тем, кто уже аккредитован?</summary>
+            <div class="faq__body"><p>Да. Аккредитация — это не разовое событие. Лаборатория постоянно подтверждает компетентность через записи, внутренние аудиты, ПК, управление рисками, оборудование, персонал, корректирующие действия, выполнение критериев аккредитации и требований НПА.</p></div>
           </details>
           <details class="faq__item">
             <summary>Можно ли связаться с вами напрямую?</summary>
@@ -470,10 +659,6 @@
             <div class="faq__body"><p>В канале могут быть шпаргалки, чек-листы, примеры формулировок и практические материалы, но основной смысл канала — не просто дать форму, а объяснить, как требование работает.</p></div>
           </details>
           <details class="faq__item">
-            <summary>Если мы уже аккредитованы, нам это нужно?</summary>
-            <div class="faq__body"><p>Да, потому что аккредитация — это не разовое событие. Лаборатория постоянно подтверждает компетентность через записи, внутренние аудиты, ПК, управление рисками, оборудование, персонал, корректирующие действия и выполнение критериев аккредитации.</p></div>
-          </details>
-          <details class="faq__item">
             <summary>Чем канал отличается от бесплатных материалов?</summary>
             <div class="faq__body"><p>Платный канал даёт более системные и практические разборы, ориентированные на реальные ситуации лабораторий, проверки, несоответствия, документы и доказательства соответствия.</p></div>
           </details>
@@ -484,7 +669,7 @@
     <section class="section" id="contacts">
       <div class="container">
         <h2 class="section__title">Связаться со мной</h2>
-        <p class="section__lead">Если у вас есть вопрос по подписке, подготовке к ПК, несоответствиям, СМК, внутреннему аудиту, критериям аккредитации, требованиям Росаккредитации или индивидуальной ситуации лаборатории — напишите мне.</p>
+        <p class="section__lead">Если у вас есть вопрос по подписке, подготовке к ПК, несоответствиям, СМК, внутреннему аудиту, критериям аккредитации, требованиям Росаккредитации, НПА или индивидуальной ситуации лаборатории — напишите мне.</p>
         <div class="contacts-grid">
           <div class="contact-item">
             <span class="contact-item__label">Telegram</span>
@@ -512,11 +697,11 @@
 
     <section class="section section--final" id="final">
       <div class="container final">
-        <h2 class="final__title">Аккредитация — это не только 17025.<br>Это система требований, доказательств и ответственности лаборатории.</h2>
-        <p class="final__subtitle">В платном канале я помогаю лабораториям разбираться в стандартах, критериях аккредитации, документах Росаккредитации, законодательстве, несоответствиях и реальных ситуациях проверок.</p>
+        <h2 class="final__title">Аккредитованной лаборатории нужна не только документация.<br>Ей нужна понятная система действий и доказательств.</h2>
+        <p class="final__subtitle">В канале я помогаю разбираться в ГОСТ ISO/IEC 17025, критериях аккредитации, документах Росаккредитации, НПА, ФЗ-412, несоответствиях и реальных ситуациях проверок.</p>
         <div class="hero__actions">
           <a href="#subscribe" class="btn btn--primary btn--lg">Оформить подписку</a>
-          <a href="#contacts" class="btn btn--outline-light btn--lg">Связаться со мной</a>
+          <a href="#contacts" class="btn btn--secondary btn--lg">Задать вопрос</a>
         </div>
         <p class="final__note">Лучше разобраться до проверки, чем срочно искать решение после акта экспертизы.</p>
       </div>
@@ -526,11 +711,12 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© 2026 Надежда Драницына · Эксперт по аккредитации лабораторий</p>
+      <p>© 2026 Надежда Драницына · СМК · ГОСТ ISO/IEC 17025 · критерии аккредитации · помощь аккредитованным лабораториям</p>
       <a href="#subscribe" class="link link--light">Оформить подписку</a>
     </div>
   </footer>
 
+  <script src="text-type.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>
