@@ -742,7 +742,7 @@ html.js .reveal.is-visible .reveal-child {
   letter-spacing: -0.02em;
 }
 
-.hero__title em {
+.hero__title em:not(.shiny-text--accent) {
   font-style: italic;
   color: var(--accent);
   font-weight: 600;
