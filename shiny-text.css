@@ -1,0 +1,37 @@
+.shiny-text {
+  display: inline;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shiny-text em {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.hero__title .shiny-text {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  font-weight: inherit;
+}
+
+.shiny-text--accent {
+  font-style: italic;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shiny-text {
+    -webkit-text-fill-color: currentColor;
+    background-image: none !important;
+    color: var(--text);
+  }
+
+  .shiny-text--accent {
+    color: var(--accent);
+  }
+}
