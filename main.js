@@ -98,7 +98,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   updateScrollUI();
 
-  const navSections = ['pains', 'benefits', 'about', 'topics', 'reviews', 'faq', 'contacts']
+  const navSections = ['pains', 'benefits', 'topics', 'reviews', 'faq', 'contacts']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
