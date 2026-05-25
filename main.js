@@ -125,8 +125,7 @@
       '.task-card',
       '.benefit-module',
       '.topic-group',
-      '.card--review',
-      '.screenshot-card',
+      '.reviews-shots__slide',
       '.contact-item',
     ];
     document.querySelectorAll('.section, .reveal').forEach((section) => {
@@ -159,114 +158,91 @@
     document.querySelectorAll('.reveal, .section').forEach((el) => el.classList.add('is-visible'));
   }
 
-  const track = document.querySelector('.reviews-track');
-  const prevBtn = document.getElementById('prevReview');
-  const nextBtn = document.getElementById('nextReview');
-  const dotsContainer = document.getElementById('reviewDots');
-  const carousel = document.getElementById('reviewsCarousel');
+  const shotsTrack = document.getElementById('reviewsShotsTrack');
+  const prevShotBtn = document.getElementById('prevReviewShot');
+  const nextShotBtn = document.getElementById('nextReviewShot');
+  const shotDotsContainer = document.getElementById('reviewShotDots');
 
-  if (track && prevBtn && nextBtn) {
-    const cards = [...track.querySelectorAll('.card--review')];
+  if (shotsTrack && prevShotBtn && nextShotBtn) {
+    const slides = [...shotsTrack.querySelectorAll('.reviews-shots__slide')];
     let activeIndex = 0;
-    let autoplayTimer = null;
+
+    const getGap = () => parseFloat(getComputedStyle(shotsTrack).gap) || 20;
 
     const getStep = () => {
-      const card = track.querySelector('.card--review');
-      if (!card) return 320;
-      const gap = parseFloat(getComputedStyle(track).gap) || 20;
-      return card.offsetWidth + gap;
+      const slide = slides[0];
+      if (!slide) return 320;
+      return slide.offsetWidth + getGap();
     };
 
     const scrollToIndex = (index) => {
-      activeIndex = Math.max(0, Math.min(index, cards.length - 1));
-      track.scrollTo({
+      activeIndex = Math.max(0, Math.min(index, slides.length - 1));
+      shotsTrack.scrollTo({
         left: activeIndex * getStep(),
         behavior: prefersReducedMotion ? 'auto' : 'smooth',
       });
-      updateDots();
+      updateShotDots();
+      updateShotNavState();
     };
 
     const scrollByStep = (dir) => scrollToIndex(activeIndex + dir);
 
-    function updateDots() {
-      if (!dotsContainer) return;
-      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+    function updateShotDots() {
+      if (!shotDotsContainer) return;
+      shotDotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
         dot.classList.toggle('is-active', i === activeIndex);
         dot.setAttribute('aria-selected', String(i === activeIndex));
       });
     }
 
-    function buildDots() {
-      if (!dotsContainer || cards.length < 2) return;
-      dotsContainer.innerHTML = '';
-      cards.forEach((_, i) => {
+    function updateShotNavState() {
+      prevShotBtn.disabled = activeIndex <= 0;
+      nextShotBtn.disabled = activeIndex >= slides.length - 1;
+    }
+
+    function buildShotDots() {
+      if (!shotDotsContainer || slides.length < 2) return;
+      shotDotsContainer.innerHTML = '';
+      slides.forEach((_, i) => {
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.className = 'carousel-dot';
         dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-label', `Отзыв ${i + 1}`);
+        dot.setAttribute('aria-label', `Скриншот ${i + 1}`);
         if (i === 0) {
           dot.classList.add('is-active');
           dot.setAttribute('aria-selected', 'true');
         }
         dot.addEventListener('click', () => scrollToIndex(i));
-        dotsContainer.appendChild(dot);
+        shotDotsContainer.appendChild(dot);
       });
     }
 
-    buildDots();
-    prevBtn.addEventListener('click', () => scrollByStep(-1));
-    nextBtn.addEventListener('click', () => scrollByStep(1));
+    buildShotDots();
+    updateShotNavState();
+    prevShotBtn.addEventListener('click', () => scrollByStep(-1));
+    nextShotBtn.addEventListener('click', () => scrollByStep(1));
 
-    track.addEventListener(
+    shotsTrack.addEventListener(
       'scroll',
       () => {
         const step = getStep();
         if (step <= 0) return;
-        const i = Math.round(track.scrollLeft / step);
-        if (i !== activeIndex) {
+        const i = Math.round(shotsTrack.scrollLeft / step);
+        if (i !== activeIndex && i >= 0 && i < slides.length) {
           activeIndex = i;
-          updateDots();
+          updateShotDots();
+          updateShotNavState();
         }
       },
       { passive: true }
     );
 
-    track.addEventListener(
-      'wheel',
-      (e) => {
-        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
-        const atStart = track.scrollLeft <= 0;
-        const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
-        if ((e.deltaX < 0 && atStart) || (e.deltaX > 0 && atEnd)) return;
-        e.preventDefault();
-      },
-      { passive: false }
-    );
-
-    function startAutoplay() {
-      if (prefersReducedMotion || cards.length < 2) return;
-      stopAutoplay();
-      autoplayTimer = setInterval(() => {
-        const next = activeIndex + 1 >= cards.length ? 0 : activeIndex + 1;
-        scrollToIndex(next);
-      }, 6000);
-    }
-
-    function stopAutoplay() {
-      if (autoplayTimer) {
-        clearInterval(autoplayTimer);
-        autoplayTimer = null;
-      }
-    }
-
-    if (carousel) {
-      carousel.addEventListener('mouseenter', stopAutoplay);
-      carousel.addEventListener('mouseleave', startAutoplay);
-      carousel.addEventListener('focusin', stopAutoplay);
-      carousel.addEventListener('focusout', startAutoplay);
-    }
-    startAutoplay();
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => scrollToIndex(activeIndex), 150);
+    });
   }
 
   document.querySelectorAll('.faq__item').forEach((item) => {
