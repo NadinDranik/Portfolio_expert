@@ -241,6 +241,15 @@ h1, h2, h3 {
   color: var(--text-muted-light);
 }
 
+.section__lead--system {
+  max-width: 52rem;
+  margin-bottom: 0.85rem;
+}
+
+.section__lead--system:last-of-type {
+  margin-bottom: 1.75rem;
+}
+
 .section__conclusion {
   font-family: var(--font-display);
   font-size: 1.12rem;
@@ -989,6 +998,55 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
   letter-spacing: 0.1em;
   color: var(--text-muted);
   margin: 0 0 1rem;
+}
+
+.help-panel--channel .help-panel__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 0.75rem;
+}
+
+.help-panel__intro {
+  margin: 0 0 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.help-panel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.help-panel__list li {
+  position: relative;
+  padding-left: 0.85rem;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.help-panel__list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.help-panel--channel {
+  max-width: 420px;
+  padding: 1.2rem 1.35rem;
 }
 
 .help-panel__grid {
@@ -1979,6 +2037,8 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
 
 .benefit-module .module-card__title {
   color: var(--card-accent, var(--accent));
+  font-size: 1.02rem;
+  line-height: 1.3;
 }
 
 .module-card__title {
@@ -2279,30 +2339,137 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
   color: var(--accent);
 }
 
-/* ---- Отзывы: скриншоты и кейсы ---- */
+/* ---- Reviews: скриншоты обратной связи ---- */
 
-.reviews-screenshots {
-  margin-bottom: 2.5rem;
+.reviews-shots {
+  position: relative;
+  margin: 0 0 2.5rem;
+  padding: 0 2.75rem;
 }
 
-.reviews-screenshots__title {
-  font-size: 0.78rem;
+.reviews-shots__viewport {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.reviews-shots__track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.25rem 0 0.75rem;
+  scrollbar-width: none;
+}
+
+.reviews-shots__track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reviews-shots__track {
+    scroll-behavior: smooth;
+  }
+}
+
+.reviews-shots__slide {
+  flex: 0 0 calc((100% - 2.5rem) / 3);
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.reviews-shots__slide .screenshot-card__frame {
+  box-shadow: var(--shadow-sm);
+}
+
+.reviews-shots__slide .screenshot-card__frame::before {
+  display: none;
+}
+
+.reviews-shots__slide img {
+  min-height: 220px;
+  max-height: 420px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+  background: var(--white);
+}
+
+.reviews-shots__slide figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
-  margin: 0 0 0.35rem;
+  text-align: center;
 }
 
-.reviews-screenshots__hint {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  margin: 0 0 1.25rem;
+.reviews-shots__nav {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, color 0.2s, background 0.2s, opacity 0.2s;
 }
 
-.grid--screenshots {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+.reviews-shots__nav:hover:not(:disabled) {
+  border-color: var(--accent-line);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.reviews-shots__nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.reviews-shots__nav--prev {
+  left: 0;
+}
+
+.reviews-shots__nav--next {
+  right: 0;
+}
+
+.reviews-shots__controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.reviews-shots__conclusion {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0 0 1.75rem;
+  padding: 1.35rem 1.5rem;
+  background: var(--white);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  max-width: 52rem;
+}
+
+#reviews .section__cta {
+  margin-top: 0;
 }
 
 .screenshot-card {
@@ -2316,7 +2483,7 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
   border: 1px solid var(--border);
   background: var(--white);
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+  transition: box-shadow 0.35s var(--ease-out);
 }
 
 .screenshot-card__frame::before {
@@ -2333,7 +2500,6 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
 
 .screenshot-card:hover .screenshot-card__frame {
   box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
 }
 
 .screenshot-card img {
@@ -2343,33 +2509,31 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
   vertical-align: middle;
 }
 
-.screenshot-card figcaption {
-  margin-top: 0.65rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-  text-align: center;
+@media (max-width: 1024px) {
+  .reviews-shots__slide {
+    flex: 0 0 calc((100% - 1.25rem) / 2);
+  }
 }
 
-.screenshot-card__placeholder {
-  aspect-ratio: 4 / 3;
-  background: var(--bg-alt);
-  border: 1px dashed var(--border);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@media (max-width: 640px) {
+  .reviews-shots {
+    padding: 0 2.25rem;
+  }
 
-.screenshot-card__placeholder::after {
-  content: 'Скриншот';
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
+  .reviews-shots__slide {
+    flex: 0 0 100%;
+  }
+
+  .reviews-shots__slide img {
+    min-height: 200px;
+    max-height: 360px;
+  }
+
+  .reviews-shots__nav {
+    width: 2.15rem;
+    height: 2.15rem;
+    font-size: 1rem;
+  }
 }
 
 .case-cols {
@@ -2469,10 +2633,6 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
 
   .pricing-card {
     grid-template-columns: 1fr;
-  }
-
-  .grid--screenshots {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .flow-diagram {
@@ -2585,13 +2745,16 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
     max-width: 100%;
   }
 
-  .help-panel__grid {
-    grid-template-columns: 1fr;
+  .help-panel--channel {
+    max-width: 100%;
   }
 
-  .grid--screenshots {
+  .help-panel__list li {
+    font-size: 0.8rem;
+  }
+
+  .help-panel__grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
   .flow-mini {
