@@ -958,6 +958,15 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
   transition: box-shadow 0.4s var(--ease-out);
 }
 
+.hero__portrait--wide {
+  max-width: 480px;
+}
+
+.hero__portrait--wide img {
+  aspect-ratio: 16 / 10;
+  object-position: center center;
+}
+
 .hero__portrait:hover img {
   box-shadow: var(--shadow-md), 0 0 80px var(--accent-glow);
 }
@@ -2619,6 +2628,10 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
     margin: 0 auto;
   }
 
+  .hero__portrait--wide {
+    max-width: 480px;
+  }
+
   .about {
     grid-template-columns: 1fr;
   }
@@ -2739,6 +2752,10 @@ html.js .hero__stagger.is-staggered > *:nth-child(10) { transition-delay: 0.58s;
 
   .hero__portrait {
     max-width: min(320px, 100%);
+  }
+
+  .hero__portrait--wide {
+    max-width: min(360px, 100%);
   }
 
   .help-panel {
